@@ -38,13 +38,18 @@ const counterFactory = () => {
 
   let count = 0;
   return {
-    increment = function() {
-      count++
-      return count;
-    }, 
-    decrement = function() {
-      count--;
-      return count;
-    }
+    increment: () => count++,
+    decrement: () => count--,
+    sum: () => count
   }
 };
+
+const test = counterFactory();
+console.log(test.sum());
+test.increment();
+test.increment();
+console.log(test.sum());
+test.decrement();
+test.decrement();
+test.decrement();
+console.log(test.sum());
