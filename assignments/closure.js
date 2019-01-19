@@ -38,11 +38,11 @@ const counterFactory = () => {
 
   let count = 0;
   return {
-    increment: function() {
+    increment = function() {
       count++
       return count;
     }, 
-    decrement: function() {
+    decrement = function() {
       count--;
       return count;
     }
