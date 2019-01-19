@@ -86,4 +86,16 @@ function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+
+  let results = array.filter(function(element, index) {
+    return array.indexOf(element) == index;
+  });
+
+  return cb(results);
 }
+
+let testArr = [1,2,'2','2',3,3,3,10,,'flower',10,'flower',3,2,1];
+
+removeDuplicates(testArr, function(result) {
+  console.log(result);
+});
